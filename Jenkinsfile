@@ -15,10 +15,8 @@ node {
         sh './jenkins/scripts/test.sh'
       }
     }
-  } finally {
-    if (dockerImage != null) {
-      dockerImage.stop()
-      dockerImage.remove(force: true)
-    }
+  } catch (Exception e) {
+    currentBuild.result = 'FAILURE'
+    throw e
   }
 }
