@@ -1,25 +1,32 @@
-node {
-  env.GITHUB_TOKEN = credentials('jenkins-github-token')
-  env.GITHUB_REPOSITORY = 'Viencent27/a428-cicd-labs'
-  withDockerContainer(image: 'timbru31/node-alpine-git:16', args: '-p 3000:3000') {
-    stage('Build') {
-      checkout scm
-      sh 'npm install'
+pipeline {
+    agent {
+        docker {
+            image 'timbru31/node-alpine-git:16' 
+            args '-p 3000:3000' 
+        }
     }
-
-    stage('Test') {
-      sh './jenkins/scripts/test.sh'
+    environment {
+        GITHUB_TOKEN     = credentials('jenkins-github-token')
+        GITHUB_REPOSITORY = 'berviantoleo/a428-cicd-labs'
     }
-
-    stage('Manual Approval') {
-      input message: 'Lanjutkan ke tahap Deploy? (Klik "Abort" untuk mengakhiri)'
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'npm install' 
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './jenkins/scripts/test.sh'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
+                input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)'
+                sh './jenkins/scripts/kill.sh'
+                sh 'chmod +x ./jenkins/scripts/github-pages.sh && ./jenkins/scripts/github-pages.sh'
+            }
+        }
     }
-
-    stage('Deploy') {
-      sh './jenkins/scripts/deliver.sh'
-      sleep(60)
-      sh './jenkins/scripts/kill.sh'
-      sh 'chmod +x ./jenkins/scripts/github-pages.sh && ./jenkins/scripts/github-pages.sh'
-    }
-  }
 }
