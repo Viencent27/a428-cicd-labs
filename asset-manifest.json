@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.eeeddbdb.chunk.css",
-    "main.js": "/static/js/main.49da9161.chunk.js",
-    "main.js.map": "/static/js/main.49da9161.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.9ba3dedb.js",
-    "runtime-main.js.map": "/static/js/runtime-main.9ba3dedb.js.map",
-    "static/js/2.7fce54d1.chunk.js": "/static/js/2.7fce54d1.chunk.js",
-    "static/js/2.7fce54d1.chunk.js.map": "/static/js/2.7fce54d1.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.eeeddbdb.chunk.css.map": "/static/css/main.eeeddbdb.chunk.css.map",
-    "static/js/2.7fce54d1.chunk.js.LICENSE.txt": "/static/js/2.7fce54d1.chunk.js.LICENSE.txt",
-    "static/media/logo.103b5fa1.svg": "/static/media/logo.103b5fa1.svg"
+    "main.css": "https://viencent27.github.io/a428-cicd-labs/static/css/main.eeeddbdb.chunk.css",
+    "main.js": "https://viencent27.github.io/a428-cicd-labs/static/js/main.a7c25ad3.chunk.js",
+    "main.js.map": "https://viencent27.github.io/a428-cicd-labs/static/js/main.a7c25ad3.chunk.js.map",
+    "runtime-main.js": "https://viencent27.github.io/a428-cicd-labs/static/js/runtime-main.4df2354d.js",
+    "runtime-main.js.map": "https://viencent27.github.io/a428-cicd-labs/static/js/runtime-main.4df2354d.js.map",
+    "static/js/2.7fce54d1.chunk.js": "https://viencent27.github.io/a428-cicd-labs/static/js/2.7fce54d1.chunk.js",
+    "static/js/2.7fce54d1.chunk.js.map": "https://viencent27.github.io/a428-cicd-labs/static/js/2.7fce54d1.chunk.js.map",
+    "index.html": "https://viencent27.github.io/a428-cicd-labs/index.html",
+    "static/css/main.eeeddbdb.chunk.css.map": "https://viencent27.github.io/a428-cicd-labs/static/css/main.eeeddbdb.chunk.css.map",
+    "static/js/2.7fce54d1.chunk.js.LICENSE.txt": "https://viencent27.github.io/a428-cicd-labs/static/js/2.7fce54d1.chunk.js.LICENSE.txt",
+    "static/media/logo.103b5fa1.svg": "https://viencent27.github.io/a428-cicd-labs/static/media/logo.103b5fa1.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9ba3dedb.js",
+    "static/js/runtime-main.4df2354d.js",
     "static/js/2.7fce54d1.chunk.js",
     "static/css/main.eeeddbdb.chunk.css",
-    "static/js/main.49da9161.chunk.js"
+    "static/js/main.a7c25ad3.chunk.js"
   ]
 }
