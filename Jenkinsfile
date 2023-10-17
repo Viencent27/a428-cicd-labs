@@ -1,5 +1,6 @@
 node {
   withCredentials([string(credentialsId: 'jenkins-github-token', variable: 'SECRET_VARIABLE')]) {
+    env.PUBLIC_URL = 'https://viencent27.github.io/a428-cicd-labs'
     env.GITHUB_TOKEN = SECRET_VARIABLE
     env.GITHUB_REPOSITORY = 'Viencent27/a428-cicd-labs'
     withDockerContainer(image: 'timbru31/node-alpine-git:16', args: '-p 3000:3000') {
