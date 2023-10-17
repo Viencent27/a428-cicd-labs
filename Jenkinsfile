@@ -1,5 +1,7 @@
 node {
-  withDockerContainer(image: 'node:16-buster-slim', args: '-p 3000:3000') {
+  env.GITHUB_TOKEN = credentials('jenkins-github-token')
+  env.GITHUB_REPOSITORY = 'Viencent27/a428-cicd-labs'
+  withDockerContainer(image: 'timbru31/node-alpine-git:16', args: '-p 3000:3000') {
     stage('Build') {
       checkout scm
       sh 'npm install'
@@ -17,6 +19,7 @@ node {
       sh './jenkins/scripts/deliver.sh'
       sleep(60)
       sh './jenkins/scripts/kill.sh'
+      sh 'chmod +x ./jenkins/scripts/github-pages.sh && ./jenkins/scripts/github-pages.sh'
     }
   }
 }
